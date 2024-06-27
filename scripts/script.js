@@ -1,3 +1,4 @@
+
 const pendingList = document.getElementById('pending');
 const completedList = document.getElementById('completed');
 const pastDueList = document.getElementById('past-due');
@@ -49,7 +50,7 @@ function renderTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-markCompleted = (taskId) => {
+markCompleted = function(taskId) {
     tasks = tasks.map(task => {
         if (task.id === taskId) {
             task.status = 'completed';
@@ -59,7 +60,7 @@ markCompleted = (taskId) => {
     renderTasks();
 }
 
-deleteTask = (taskId) => {
+deleteTask = function(taskId) {
     tasks = tasks.filter(task => task.id !== taskId);
     renderTasks();
 }
@@ -80,3 +81,27 @@ taskForm.addEventListener('submit', event => {
 });
 
 renderTasks();
+
+
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("openModalBtn");
+const submitButton = document.getElementById("submit");
+const span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+modal.style.display = "block";
+}
+
+span.onclick = function() {
+modal.style.display = "none";
+}
+
+submitButton.onclick = function() {
+modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+if (event.target == modal) {
+    modal.style.display = "none";
+}
+}

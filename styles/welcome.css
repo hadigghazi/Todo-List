@@ -37,3 +37,16 @@ button {
 h1 {
     color: #4c8eaf;
 }
+
+@media (max-width: 480px) {
+    .welcome-container {
+        width: 80%;
+    }
+    input {
+        width: 70%;
+    }
+    button {
+        margin-top: 20px;
+        width: 100px;
+    }
+}
