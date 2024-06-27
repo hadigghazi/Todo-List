@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | Tasky</title>
+    <link rel="stylesheet" href="styles/welcome.css">
+</head>
+<body>
+    <div class="welcome-container">
+        <h1>Welcome to the To-Do List</h1>
+        <form id="welcome-form">
+            <input type="text" id="user-name" placeholder="Enter your name" required>
+            <button type="submit"><span>Start</span></button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('welcome-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const userName = document.getElementById('user-name').value;
+            localStorage.setItem('userName', userName);
+            window.location.href = 'main.html';
+        });
+    </script>
+</body>
+</html>

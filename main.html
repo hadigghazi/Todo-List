@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasky</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+    <h3 id="greeting"></h3>
+    <button id="openModalBtn"><span>Add Task</span></button>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+    <form id="task-form">
+        <div>
+            <label for="input" class="text">Task:</label>
+            <input type="text" placeholder="Task Name..." name="input" id="task-name" required>
+        </div>
+        <div>
+            <label for="input" class="text">Employee:</label>
+            <input type="text" placeholder="Assign to..." name="input" id="task-person" required>
+        </div>
+        <div>
+            <label for="input" class="text">Task Due Date:</label>
+            <input type="datetime-local" name="input" id="task-datetime" required>
+        </div>
+        <button type="submit" id="submit" class="button">
+            <span class="lable">Add Task</span>
+          </button>
+    </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="column">
+            <h2>Pending</h2>
+            <div id="pending" class="task-list"></div>
+        </div>
+        <div class="column">
+            <h2>Completed</h2>
+            <div id="completed" class="task-list"></div>
+        </div>
+        <div class="column">
+            <h2>Past Due</h2>
+            <div id="past-due" class="task-list"></div>
+        </div>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
